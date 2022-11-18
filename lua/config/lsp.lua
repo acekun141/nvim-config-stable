@@ -147,7 +147,6 @@ else
   vim.notify("sourcekit not found!", vim.log.levels.WARN, { title = "Nvim-config" })
 end
 
-
 if utils.executable("clangd") then
   lspconfig.clangd.setup {
     on_attach = custom_attach,

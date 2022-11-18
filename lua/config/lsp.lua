@@ -134,14 +134,19 @@ else
   vim.notify("tsserver not found!", vim.log.levels.WARN, { title = "Nvim-config" })
 end
 
--- if utils.executable('pyright') then
---   lspconfig.pyright.setup{
---     on_attach = custom_attach,
---     capabilities = capabilities
---   }
--- else
---   vim.notify("pyright not found!", vim.log.levels.WARN, {title = 'Nvim-config'})
--- end
+if utils.executable("sourcekit") then
+  lspconfig.sourcekit.setup {
+    on_attach = custom_attach,
+    filetypes = { "swift", "c", "cpp", "objective-c", "objective-cpp" },
+    flags = {
+      debounce_text_changes = 200,
+    },
+    capabilities = capabilities,
+  }
+else
+  vim.notify("sourcekit not found!", vim.log.levels.WARN, { title = "Nvim-config" })
+end
+
 
 if utils.executable("clangd") then
   lspconfig.clangd.setup {

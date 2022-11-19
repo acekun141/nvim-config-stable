@@ -221,12 +221,6 @@ packer.startup {
 
     use { "nvim-zh/better-escape.vim", event = { "InsertEnter" } }
 
-    if vim.g.is_mac then
-      use { "lyokha/vim-xkbswitch", event = { "InsertEnter" } }
-    elseif vim.g.is_win then
-      use { "Neur1n/neuims", event = { "InsertEnter" } }
-    end
-
     -- Auto format tools
     use { "sbdchd/neoformat", cmd = { "Neoformat" } }
 

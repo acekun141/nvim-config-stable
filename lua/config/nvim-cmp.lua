@@ -40,7 +40,7 @@ cmp.setup {
   },
   completion = {
     keyword_length = 1,
-    completeopt = "menu,noselect",
+    completeopt = "menu,noinsert,noselect",
   },
   view = {
     entries = "custom",
